@@ -75,13 +75,12 @@ class MapsFragment : Fragment() {
                 }
             }
             else{
-                viewModel.truckData.forEach{
                 val marker = LatLng(it.lastWaypoint.lat, it.lastWaypoint.lng)
                 val title = it.truckNumber
                 googleMap.addMarker(MarkerOptions().position(marker).title(title)
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)))
                 googleMap.moveCamera(CameraUpdateFactory.newLatLng(marker))
-                }
+
             }
         }
     }
